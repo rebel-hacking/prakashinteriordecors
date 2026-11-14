@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-ivory: #F5F1E8;
+  --color-cream: #EAE4D8;
+  --color-navy: #172B45;
+  --color-navy-dark: #102238;
+  --color-muted-blue: #526B87;
+  --color-champagne: #C6B596;
+  --color-slate-grey: #697586;
+  --color-beige-grey: #DED8CD;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-ivory);
+    color: var(--color-navy);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-navy);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Editorial heading font defaults */
+  h1, h2, h3, .font-editorial {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #EAE4D8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #526B87;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #172B45;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #526B87;
+    outline-offset: 2px;
+  }
+}
+
+/* Subtle grain overlay for boutique architectural tactile feel */
+.bg-grain {
+  background-image: radial-gradient(rgba(23, 43, 69, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Editorial line clamp & image styling */
+.img-editorial {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-editorial:hover {
+  transform: scale(1.025);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
